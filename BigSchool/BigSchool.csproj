@@ -178,11 +178,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Api\CoursesController.cs" />
     <Compile Include="Controllers\AttendancesController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
+    <Compile Include="Controllers\FollowingsController.cs" />
+    <Compile Include="Controllers\FollowingViewModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\WebAPIConfig.cs" />
+    <Compile Include="DTOs\AttendanceDto.cs" />
+    <Compile Include="DTOs\FollowingDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -210,15 +215,29 @@
     <Compile Include="Migrations\202107070801300_addAttendance.Designer.cs">
       <DependentUpon>202107070801300_addAttendance.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107140929159_addfollowingstable.cs" />
+    <Compile Include="Migrations\202107140929159_addfollowingstable.Designer.cs">
+      <DependentUpon>202107140929159_addfollowingstable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107210726382_myMirgrationName.cs" />
+    <Compile Include="Migrations\202107210726382_myMirgrationName.Designer.cs">
+      <DependentUpon>202107210726382_myMirgrationName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107210738569_AddIsCanceledColumnToCourse.cs" />
+    <Compile Include="Migrations\202107210738569_AddIsCanceledColumnToCourse.Designer.cs">
+      <DependentUpon>202107210738569_AddIsCanceledColumnToCourse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Attendance.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\Following.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\CoursesViewModel.cs" />
     <Compile Include="ViewModels\CourseViewModel.cs" />
     <Compile Include="ViewModels\FutureDate.cs" />
     <Compile Include="ViewModels\ValidTime.cs" />
@@ -281,6 +300,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Courses\Create.cshtml" />
     <Content Include="Views\ViewModel.cshtml" />
+    <Content Include="Views\Courses\Attending.cshtml" />
+    <Content Include="Views\Courses\Mine.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -316,6 +337,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107070801300_addAttendance.resx">
       <DependentUpon>202107070801300_addAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107140929159_addfollowingstable.resx">
+      <DependentUpon>202107140929159_addfollowingstable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107210726382_myMirgrationName.resx">
+      <DependentUpon>202107210726382_myMirgrationName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107210738569_AddIsCanceledColumnToCourse.resx">
+      <DependentUpon>202107210738569_AddIsCanceledColumnToCourse.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

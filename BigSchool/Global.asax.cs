@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BigSchool.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,6 @@ namespace BigSchool
 {
     public class MvcApplication : System.Web.HttpApplication
     {
-        public object WebApiConfig { get; private set; }
 
         protected void Application_Start()
         {
